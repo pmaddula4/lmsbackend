@@ -14,12 +14,16 @@ public class ItemService {
     @Autowired
     private ItemRepository itemRepository;
 
+    public ItemService(ItemRepository itemRepository) {
+        this.itemRepository = itemRepository;
+    }
+
     public List<Item> getAllItems() {
         return itemRepository.findAll();
     }
 
     public Optional<Item> getItemById(String id) {
-        return itemRepository.findById(id);
+        return itemRepository.findById(id).orElseThrow();
     }
 
     public List<Item> getItemsByTitle(String title) {
