@@ -9,10 +9,6 @@ public interface ItemRepository extends MongoRepository<Item, String> {
     List<Item> findByTitle(String title);
     List<Item> findByAuthor(String author);
     List<Item> findByType(String type);
-
-    List<Item> findByBorrower(String borrower);
-    List<Item> findByBorrowed(boolean borrowed);
-
-
+    List<Item> findByBorrowedBy(String borrowedBy);
 
 }
