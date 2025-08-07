@@ -23,7 +23,7 @@ public class ItemService {
     }
 
     public Optional<Item> getItemById(String id) {
-        return itemRepository.findById(id).orElseThrow();
+        return itemRepository.findById(id);
     }
 
     public List<Item> getItemsByTitle(String title) {
